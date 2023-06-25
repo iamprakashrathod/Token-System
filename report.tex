@@ -1,0 +1,63 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}  
+\usepackage[backend=biber]{biblatex}
+\usepackage{hyperref}
+
+
+\begin{document}
+
+\title{Dr. Sanjeev Netralaya \\ Online Booking}
+\author{Prakash S Rathod}
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+    This project report presents the implementation and customization of a token and appointment system. The system allows individuals to schedule appointments, tracks available slots per location, and assigns tokens and appointment times. The code provided in this project has been customized to incorporate age-based prioritization, doctor selection, and language preferences for doctors. This report provides a detailed description of the project, code structure, implementation details, compilation instructions, and the results obtained.
+\end{abstract}
+
+\section{Introduction}
+The token and appointment system is designed to streamline the appointment scheduling process and ensure efficient allocation of resources. This report presents the implementation of the system, along with additional customizations to meet specific requirements. The goal of the project is to create a system that assigns tokens and appointment times based on various factors such as age, doctor availability, and language preferences.
+
+\section{Implementation Details}
+The implemented code is based on JavaScript and utilizes Google Apps Script for integration with Google Sheets and email functionalities. The code reads data from a Google Sheet containing applicant information, including names, emails, locations, doctors, and language preferences. It assigns tokens and appointment times based on the availability of slots per location, while considering the maximum number of appointments allowed per doctor.
+
+\section{Code Structure}
+The code structure consists of the following files:
+
+\begin{itemize}
+    \item \textbf{project.js}: This file contains the main function \texttt{sendTokensAndAppointments}, which reads the applicant data from the Google Sheet and assigns tokens and appointment times. It also calls the \texttt{sendEmail} function to send confirmation emails to the applicants. This file contains the helper functions \texttt{calculateAppointmentTime} and \texttt{sendEmail}. The \texttt{calculateAppointmentTime} function calculates the appointment time based on the assigned token, and the \texttt{sendEmail} function sends confirmation emails to the applicants.
+\end{itemize}
+
+\section{Compilation Instructions}
+To run the token and appointment system, follow these steps:
+
+\begin{enumerate}
+        \item Open the \href{https://forms.gle/JCb4TP7xBunpTqg99}{Google form} and fill the google form .
+        \item I will share the access for corresponding google sheets.
+    \item Open the associated Google Apps Script editor.
+    \item Copy and paste the code from the provided files (\texttt{project.js}) into the editor.
+    \item Save the code and run the \texttt{sendTokensAndAppointments} function.
+\end{enumerate}
+
+Ensure that the necessary permissions are granted for accessing the Google Sheets and sending emails using Google Apps Script.
+
+\section{Results and Discussion}
+The implemented token and appointment system successfully assigns tokens and appointment times based on various factors such as availability of slots, doctor preferences. The system effectively handles duplicate entries and sends confirmation emails to the applicants. In one day total 30 slots are there. There were total 5 locations are there and 3 Doctors. Doctors were language specified and if anyone wants to according to their language status. Per day each doctor recieve 2 appointments according to each location.
+
+\begin{thebibliography}{9}
+  
+    \bibitem{spreadsheetdev}
+    Spreadsheet.dev. (2023). \textit{Send an Email for Every Row in a Google Sheet}. Retrieved from \url{https://spreadsheet.dev/send-an-email-for-every-row-in-a-google-sheet}
+    
+    \bibitem{w3schools}
+    w3schools.com. (2023). \textit{JavaScript Tutorial}. Retrieved from \url{https://www.w3schools.com/js/}
+    
+    \bibitem{codementor}
+    Garuba, O. (2023). \textit{Google Apps Script: Automated Emails}. Retrieved from \url{https://www.codementor.io/@olatundegaruba/google-apps-script-automated-emails-m2m0ojq9v}
+    
+    \end{thebibliography}
+    
+
+\end{document}
